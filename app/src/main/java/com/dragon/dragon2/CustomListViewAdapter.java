@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,17 +25,38 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> {
     }
 
 
+    /*private view holder class*/
+    private class ViewHolder {
+        TextView timeView;
+        Button button;
+        CheckBox sunBox;
+    }
 
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        ViewHolder holder = null;
 
         RowItem rowItem = getItem(position);
 
         LayoutInflater mInflater = (LayoutInflater) context
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
+        // use holder pattern to speed up listview scroll *************** !!
+        
+        if(convertView==null)
+        {
             convertView = mInflater.inflate(R.layout.listview_item, null);
-            TextView timeText = (TextView) convertView.findViewById(R.id.timeText);
 
+            holder = new ViewHolder();
+            holder.timeView = (TextView) convertView.findViewById(R.id.timeText);
+            holder.button = convertView.findViewById(R.id.button);
+            holder.sunBox = convertView.findViewById(R.id.checkBox7);
+
+            convertView.setTag(holder);
+
+            //TextView timeText = (TextView) convertView.findViewById(R.id.timeText);
+
+            /*
         CheckBox SundayBox = (CheckBox) convertView.findViewById(R.id.checkBox7);
         CheckBox MondayBox = (CheckBox) convertView.findViewById(R.id.checkBox1);
         CheckBox TuesdayBox = (CheckBox) convertView.findViewById(R.id.checkBox2);
@@ -42,8 +64,15 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> {
         CheckBox ThursdayBox = (CheckBox) convertView.findViewById(R.id.checkBox4);
         CheckBox FridayBox = (CheckBox) convertView.findViewById(R.id.checkBox5);
         CheckBox SaturdayBox = (CheckBox) convertView.findViewById(R.id.checkBox6);
+*/
+            //timeText.setText(rowItem.getTime());
+        }
+        else
+        {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-        timeText.setText(rowItem.getTime());
+        holder.timeView.setText(rowItem.getTime());
 
         return convertView;
     }

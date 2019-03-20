@@ -6,8 +6,8 @@
 
     <EditText
         android:id="@+id/timeText"
-        android:layout_width="69dp"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
         android:editable="false"
         android:ems="10"
@@ -17,57 +17,57 @@
 
     <CheckBox
         android:id="@+id/checkBox7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
         android:text="S" />
+    <!--
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="1" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="1" />
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="2" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="2" />
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="3" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="3" />
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="4" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="4" />
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="5" />
 
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="5" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="S" />
-
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="S" />
+    -->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_weight="1"
         android:text="PickTime" />
 </LinearLayout>
