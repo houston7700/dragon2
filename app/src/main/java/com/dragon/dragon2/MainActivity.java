@@ -2,6 +2,8 @@ package com.dragon.dragon2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,8 +16,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
-    ListView mListView;
+    //ListView mListView;
+    RecyclerView recyclerView;
 
+    RecyclerView.LayoutManager layoutManager;
 
 
     RowItem row1 = new RowItem(1, "00:10", false, false, false,false, false, false,false);
@@ -48,8 +52,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mListView = (ListView) findViewById(R.id.listview);
+        //mListView = (ListView) findViewById(R.id.listview);
+        recyclerView = (RecyclerView) findViewById(R.id.recView);
+        recyclerView.setHasFixedSize(true);
 
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         rows.add(row1);
         rows.add(row2);
@@ -73,22 +81,12 @@ public class MainActivity extends AppCompatActivity {
         rows.add(row14);
         rows.add(row15);
 
-        CustomListViewAdapter myAdapter = new CustomListViewAdapter(this, R.layout.listview_item, rows);
+        RowItem[] itemArray = {row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12, row13, row14, row15};
 
-        mListView.setAdapter(myAdapter);
+        RecAdapter myAdapter = new RecAdapter(itemArray);
 
-        /* --no use
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        recyclerView.setAdapter(myAdapter);
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Toast.makeText(MainActivity.this, "You Clicked at " +position, Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        */
     }
-
 
 }

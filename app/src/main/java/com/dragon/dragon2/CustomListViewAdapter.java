@@ -42,7 +42,7 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> {
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
         // use holder pattern to speed up listview scroll *************** !!
-        
+
         if(convertView==null)
         {
             convertView = mInflater.inflate(R.layout.listview_item, null);
