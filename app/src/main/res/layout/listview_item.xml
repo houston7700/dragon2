@@ -21,7 +21,7 @@
         android:layout_height="50dp"
         android:layout_weight="1"
         android:text="S" />
-    <!--
+
         <CheckBox
             android:id="@+id/checkBox1"
             android:layout_width="40dp"
@@ -63,7 +63,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:text="S" />
-    -->
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"

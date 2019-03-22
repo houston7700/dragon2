@@ -21,14 +21,32 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         public TextView timeView;
         public Button btn ;
         public CheckBox cb7;
+        public CheckBox cb1;
+        public CheckBox cb2;
+        public CheckBox cb3;
+        public CheckBox cb4;
+        public CheckBox cb5;
+        public CheckBox cb6;
 
         public ViewHolder(View v)  {
             super(v);
             timeView = v.findViewById(R.id.timeText);
             btn = v.findViewById(R.id.button);
             cb7 = v.findViewById(R.id.checkBox7);
+            cb1 = v.findViewById(R.id.checkBox1);
+            cb2 = v.findViewById(R.id.checkBox2);
+            cb3 = v.findViewById(R.id.checkBox3);
+            cb4 = v.findViewById(R.id.checkBox4);
+            cb5 = v.findViewById(R.id.checkBox5);
+            cb6 = v.findViewById(R.id.checkBox6);
 
             cb7.setOnClickListener(this);
+            cb1.setOnClickListener(this);
+            cb2.setOnClickListener(this);
+            cb3.setOnClickListener(this);
+            cb4.setOnClickListener(this);
+            cb5.setOnClickListener(this);
+            cb6.setOnClickListener(this);
         }
 
         public TextView getTimeView()
@@ -39,10 +57,36 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         {
             return btn;
         }
+        public CheckBox getCb1()
+        {
+            return cb1;
+        }
+        public CheckBox getCb2()
+        {
+            return cb2;
+        }
+        public CheckBox getCb3()
+        {
+            return cb3;
+        }
+        public CheckBox getCb4()
+        {
+            return cb4;
+        }
+        public CheckBox getCb5()
+        {
+            return cb5;
+        }
+        public CheckBox getCb6()
+        {
+            return cb6;
+        }
         public CheckBox getCb7()
         {
             return cb7;
         }
+
+
 
         /**
          * Called when a view has been clicked.
@@ -52,14 +96,52 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
             int pos = getAdapterPosition();
-            System.out.println("dddddddd: " +pos + " " + v.getId() + "  " + R.id.checkBox7);
+            Log.d(TAG,"dddddddd: " +pos + " " + v.getId() + "  " + R.id.checkBox7);
 
 
             if(v.getId() == R.id.checkBox7)
             {
                 items[pos].setSunday( cb7.isChecked() );
-                System.out.println( pos + " cb7 set" );
+                
+                Log.d(TAG, pos + " cb7 set" );
             }
+
+            if(v.getId() == R.id.checkBox1)
+            {
+                items[pos].setMonday( cb1.isChecked() );
+                Log.d(TAG, pos + " cb1 set" );
+            }
+
+            if(v.getId() == R.id.checkBox2)
+            {
+                items[pos].setTuesday( cb2.isChecked() );
+                Log.d(TAG, pos + " cb2 set" );
+            }
+
+            if(v.getId() == R.id.checkBox3)
+            {
+                items[pos].setWednesday( cb3.isChecked() );
+                Log.d(TAG, pos + " cb3 set" );
+            }
+
+            if(v.getId() == R.id.checkBox4)
+            {
+                items[pos].setThursday( cb4.isChecked() );
+                Log.d(TAG, pos + " cb4 set" );
+            }
+
+            if(v.getId() == R.id.checkBox5)
+            {
+                items[pos].setFriday( cb5.isChecked() );
+                Log.d(TAG, pos + " cb5 set" );
+            }
+
+            if(v.getId() == R.id.checkBox6)
+            {
+                items[pos].setSaturday( cb6.isChecked() );
+                Log.d(TAG, pos + " cb6 set" );
+            }
+
         }
     }
 
@@ -91,7 +173,12 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         // with that element
         viewHolder.getTimeView().setText(items[position].getTime());
         viewHolder.getCb7().setChecked(items[position].isSunday());
-        ///todo
+        viewHolder.getCb1().setChecked(items[position].isMonday());
+        viewHolder.getCb2().setChecked(items[position].isTuesday());
+        viewHolder.getCb3().setChecked(items[position].isWednesday());
+        viewHolder.getCb4().setChecked(items[position].isThursday());
+        viewHolder.getCb5().setChecked(items[position].isFriday());
+        viewHolder.getCb6().setChecked(items[position].isSaturday());
     }
 
     @Override
